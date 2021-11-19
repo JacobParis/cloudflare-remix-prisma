@@ -11,6 +11,7 @@ esbuild.build({
   format: "esm",
   define: {
     "process.env.NODE_ENV": `"${mode}"`,
+    "process.env.DATABASE_URL": `DATABASE_URL`,
   },
   outfile: "worker.js",
   plugins: [
