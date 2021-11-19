@@ -9,10 +9,11 @@ datasource db {
 }
 
 model Log {
-  id      String @id @default(dbgenerated()) @map("_id") @db.ObjectId
-  level   Level
-  message String
-  meta    Json
+  id        String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  createdAt DateTime @default(now())
+  level     Level
+  message   String
+  meta      Json
 }
 
 enum Level {

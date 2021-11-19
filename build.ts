@@ -8,7 +8,6 @@ esbuild.build({
   entryPoints: ["./worker/index.ts"],
   bundle: true,
   minify: mode === "production",
-  sourcemap: mode !== "production",
   format: "esm",
   define: {
     "process.env.NODE_ENV": `"${mode}"`,

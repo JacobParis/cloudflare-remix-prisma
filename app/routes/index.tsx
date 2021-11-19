@@ -44,6 +44,16 @@ export default function Index() {
           </Link>
           <Link
             prefetch="intent"
+            to="logs"
+            className="card lg:card-side bordered hover:border-primary-focus"
+          >
+            <div className="card-body">
+              <h2 className="card-title">Prisma</h2>
+              <p>Read from a real database using Prisma.</p>
+            </div>
+          </Link>
+          <Link
+            prefetch="intent"
             to="ab-testing"
             className="card lg:card-side bordered hover:border-primary-focus"
           >
