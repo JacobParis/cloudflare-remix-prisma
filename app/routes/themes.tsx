@@ -2,6 +2,7 @@ import { useRef } from "react";
 import type { ActionFunction, LoaderFunction, MetaFunction } from "remix";
 import { json, Form, useLoaderData, useSubmit } from "remix";
 
+import prisma from "../prisma.server";
 import { unencryptedSession } from "../sessions.server";
 
 let VALID_THEMES = [
@@ -33,6 +34,14 @@ export let action: ActionFunction = async ({ request }) => {
 
   let theme = formData.get("theme") || "dark";
   session.set("theme", theme);
+
+  await prisma.log.create({
+    data: {
+      level: "Info",
+      message: `theme set to ${theme}`,
+      meta: {},
+    },
+  });
 
   return json(null, {
     headers: {

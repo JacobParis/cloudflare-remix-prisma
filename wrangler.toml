@@ -1,4 +1,4 @@
-name = "remix-cloudflare-demo"
+name = "cloudflare-remix-prisma"
 type = "javascript"
 workers_dev = true
 # account_id = "Or specified with process.env.CF_ACCOUNT_ID"
